@@ -19,6 +19,16 @@ export type IncomeCategory =
   | "refund"
   | "other";
 
+export type FamilyMember = {
+  id: string;
+  name: string;
+  avatarUrl: string;
+};
+
+export type FamilyEntry = Entry & {
+  user: FamilyMember;
+};
+
 export type EntryCategory = ExpenseCategory | IncomeCategory;
 
 export type Entry = {

@@ -7,4 +7,6 @@ export type User = {
   createdAt: string;
   updatedAt: string;
   avatar: string;
+  familyName: string;
+  familyAvatar: string;
 };

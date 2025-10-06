@@ -1,4 +1,4 @@
-import React, { createContext, useContext, type ReactNode } from 'react';
+import { createContext, useContext, type ReactNode } from 'react';
 import type { User } from '~/types/user';
 
 // Mock user data
@@ -11,6 +11,8 @@ const mockUser: User = {
   createdAt: '2024-01-01T00:00:00.000Z',
   updatedAt: '2024-01-01T00:00:00.000Z',
   avatar: 'https://thispersondoesnotexist.com/',
+  familyAvatar: 'https://placebear.com/250/250',
+  familyName: 'Os Silvas'
 };
 
 // User context interface

@@ -5,7 +5,7 @@ export default function AppNav() {
   const { user } = useUser();
 
   return (
-    <nav className="w-full shadow-sm bg-white">
+    <nav className="w-full shadow-sm bg-white hidden md:block">
       <div className="wrapper">
         <div className="flex items-center justify-between h-15">
           <div className="flex items-center gap-6 h-full">

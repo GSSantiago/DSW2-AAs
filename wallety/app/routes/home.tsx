@@ -6,8 +6,7 @@ import { useUser } from "~/contexts/UserContext";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Wallety" },
   ];
 }
 

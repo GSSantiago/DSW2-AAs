@@ -61,6 +61,30 @@ export default function Home() {
       createdAt: "2025-09-18",
       updatedAt: "2025-09-18",
     },
+    {
+      id: "5",
+      userId: "1",
+      title: "Viagem",
+      value: 100,
+      date: "2025-09-18",
+      type: "expense",
+      category: "transport",
+      description: "Viagem para a praia",
+      createdAt: "2025-09-18",
+      updatedAt: "2025-09-18",
+    },
+    {
+      id: "6",
+      userId: "1",
+      title: "Viagem",
+      value: 100,
+      date: "2025-09-18",
+      type: "expense",
+      category: "transport",
+      description: "Viagem para a praia",
+      createdAt: "2025-09-18",
+      updatedAt: "2025-09-18",
+    },
   ];
 
   const totalBalance = entries.reduce((acc, entry) => {

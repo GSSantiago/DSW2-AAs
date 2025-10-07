@@ -1,7 +1,7 @@
 import AppNav from "~/components/AppNav";
+import BottomNav from "~/components/BottomNav";
 import type { Route } from "./+types/layout";
 import { Outlet, Link, useNavigate } from "react-router";
-
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Wallety Dashboard" },
@@ -18,7 +18,7 @@ export default function Layout() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 relative pb-15 md:pb-0">
       {/* Navigation */}
       <AppNav />
 
@@ -28,6 +28,9 @@ export default function Layout() {
           <Outlet />
         </div>
       </main>
+
+      {/* Bottom Navigation */}
+      <BottomNav />
     </div>
   );
 }

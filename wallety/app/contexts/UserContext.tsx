@@ -1,23 +1,12 @@
-import { createContext, useContext, type ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
 import type { User } from '~/types/user';
-
-// Mock user data
-const mockUser: User = {
-  id: '1',
-  firstName: 'João',
-  lastName: 'Silva',
-  email: 'joao@example.com',
-  currentGroupId: null,
-  createdAt: '2024-01-01T00:00:00.000Z',
-  updatedAt: '2024-01-01T00:00:00.000Z',
-  avatar: 'https://thispersondoesnotexist.com/',
-  familyAvatar: 'https://placebear.com/250/250',
-  familyName: 'Os Silvas'
-};
 
 // User context interface
 interface UserContextType {
-  user: User;
+  user: User | null;
+  isLoading: boolean;
+  error: string | null;
+  refreshUser: () => Promise<void>;
 }
 
 // Create context
@@ -29,8 +18,44 @@ interface UserProviderProps {
 }
 
 export function UserProvider({ children }: UserProviderProps) {
+  const [user, setUser] = useState<User | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchUser = async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      
+      const response = await fetch('http://localhost:3001/users/1');
+      
+      if (!response.ok) {
+        throw new Error(`Failed to fetch user: ${response.statusText}`);
+      }
+      
+      const userData = await response.json();
+      setUser(userData);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to fetch user');
+      console.error('Error fetching user:', err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const refreshUser = async () => {
+    await fetchUser();
+  };
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
   const value: UserContextType = {
-    user: mockUser,
+    user,
+    isLoading,
+    error,
+    refreshUser,
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;

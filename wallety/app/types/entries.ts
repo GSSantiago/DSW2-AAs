@@ -1,3 +1,5 @@
+import type { User } from "./user";
+
 export type EntryType = "income" | "expense";
 
 export type ExpenseCategory =
@@ -19,14 +21,8 @@ export type IncomeCategory =
   | "refund"
   | "other";
 
-export type FamilyMember = {
-  id: string;
-  name: string;
-  avatarUrl: string;
-};
-
 export type FamilyEntry = Entry & {
-  user: FamilyMember;
+  user: User;
 };
 
 export type EntryCategory = ExpenseCategory | IncomeCategory;

@@ -12,16 +12,16 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
-          <div className="mx-auto h-12 w-12 bg-indigo-600 rounded-lg flex items-center justify-center">
+          <div className="mx-auto h-12 w-12 bg-primary rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-xl">W</span>
           </div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to Wallety
+            Faça login no Wallety
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Or{" "}
-            <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-              create a new account
+            Ou{" "}
+            <a href="#" className="font-medium text-primary hover:text-primary">
+              crie uma nova conta
             </a>
           </p>
         </div>
@@ -29,7 +29,7 @@ export default function Login() {
           <div className="space-y-4">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email address
+                Endereço de email
               </label>
               <input
                 id="email"
@@ -37,13 +37,13 @@ export default function Login() {
                 type="email"
                 autoComplete="email"
                 required
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Enter your email"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm"
+                placeholder="email@exemplo.com"
               />
             </div>
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                Password
+                Senha
               </label>
               <input
                 id="password"
@@ -51,8 +51,8 @@ export default function Login() {
                 type="password"
                 autoComplete="current-password"
                 required
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Enter your password"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm"
+                placeholder="********"
               />
             </div>
           </div>
@@ -63,16 +63,16 @@ export default function Login() {
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
               />
               <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                Remember me
+                Lembrar-me
               </label>
             </div>
 
             <div className="text-sm">
-              <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                Forgot your password?
+              <a href="#" className="font-medium text-primary hover:text-primary-dark">
+                Esqueceu sua senha?
               </a>
             </div>
           </div>
@@ -80,9 +80,9 @@ export default function Login() {
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="button w-full py-2"
             >
-              Sign in
+              Entrar
             </button>
           </div>
         </form>

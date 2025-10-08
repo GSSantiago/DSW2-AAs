@@ -18,7 +18,7 @@ export default function BottomNav() {
 
         <BottomNavItem
           to="/profile"
-          icon={<img src={user.avatar} alt="Avatar" className="size-6 object-cover rounded-full" />}
+          icon={user ? <img src={user.avatar} alt="Avatar" className="size-6 object-cover rounded-full" /> : null}
           label="Conta"
         />
       </div>

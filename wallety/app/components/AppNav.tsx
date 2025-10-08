@@ -25,11 +25,13 @@ export default function AppNav() {
             </div>
           </div>
           <div className="flex items-center gap-2 h-full navbar-link">
-            <img
-              src={user.avatar}
-              alt="Avatar"
-              className="size-10 object-cover rounded-full"
-            />
+            {user && (
+              <img
+                src={user.avatar}
+                alt={user.firstName || ""}
+                className="size-10 object-cover rounded-full"
+              />
+            )}
           </div>
         </div>
       </div>

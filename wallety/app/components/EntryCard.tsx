@@ -1,4 +1,5 @@
-import type { Entry, FamilyMember } from "~/types/entries";
+import type { Entry } from "~/types/entries";
+import type { User } from "~/types/user";
 
 const incomeIcons = {
   salary: "💼",
@@ -44,7 +45,7 @@ const categoryLabels = {
 export default function EntryCard({
   entry,
 }: {
-  entry: Entry & { user?: FamilyMember };
+  entry: Entry & { user?: User };
 }) {
   return (
     <div className="flex justify-between items-center rounded-lg bg-white p-4 border border-gray-200">
@@ -54,10 +55,10 @@ export default function EntryCard({
             entry.type === "income" ? "bg-green-200" : "bg-red-200"
           }`}
         >
-          {entry.user?.avatarUrl ? (
+          {entry.user?.avatar ? (
             <img
-              src={entry.user.avatarUrl}
-              alt={entry.user.name}
+              src={entry.user.avatar}
+              alt={`${entry.user.firstName} ${entry.user.lastName}`}
               className="size-10 rounded-full object-cover"
             />
           ) : (
@@ -69,7 +70,7 @@ export default function EntryCard({
             {entry.title}
           </span>
           <span className="text-sm text-gray-500">
-            {entry.user && `${entry.user?.name} -`} {categoryLabels[entry.category]}
+            {entry.user && `${entry.user?.firstName} ${entry.user?.lastName} -`} {categoryLabels[entry.category]}
           </span>
         </div>
       </div>

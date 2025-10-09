@@ -1,46 +1,6 @@
+import { categoryIcons, categoryLabels } from "~/constants/entries";
 import type { Entry } from "~/types/entries";
 import type { User } from "~/types/user";
-
-const incomeIcons = {
-  salary: "💼",
-  freelance: "💼",
-  gift: "🎁",
-  refund: "💰",
-  other: "💰",
-};
-
-const expenseIcons = {
-  food: "🍔",
-  transport: "🚗",
-  housing: "🏠",
-  public_services: "🏢",
-  personal_care: "💄",
-  health: "🏥",
-  education: "🎓",
-  entertainment: "🎉",
-  other: "💰",
-};
-
-const categoryIcons = {
-  ...incomeIcons,
-  ...expenseIcons,
-};
-
-const categoryLabels = {
-  food: "Alimentação",
-  transport: "Transporte",
-  housing: "Moradia",
-  public_services: "Serviços públicos",
-  personal_care: "Cuidados pessoais",
-  health: "Saúde",
-  education: "Educação",
-  entertainment: "Entretenimento",
-  other: "Outros",
-  salary: "Salário",
-  freelance: "Freelance",
-  gift: "Presente",
-  refund: "Reembolso",
-};
 
 export default function EntryCard({
   entry,

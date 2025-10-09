@@ -44,6 +44,9 @@ app.get('/users', (req, res) => {
 
 app.get('/users/:id', (req, res) => {
   const user = db.users?.find(u => u.id === req.params.id);
+  const userFamily = db.families?.find(f => f.id === user.currentFamilyId);
+
+  user.family = userFamily;
   if (!user) return res.status(404).json({ error: 'User not found' });
   res.json(user);
 });

@@ -25,6 +25,12 @@ export default function Family() {
   const totalExpense = familyEntries?.filter((entry) => entry.type === "expense")
     ?.reduce((acc, entry) => acc + entry.value, 0) ?? 0;
 
+  const totalUserIncome = familyEntries?.filter((entry) => entry.type === "income" && entry.userId == user?.id)
+    ?.reduce((acc, entry) => acc + entry.value, 0) ?? 0;
+
+  const totalUserExpense = familyEntries?.filter((entry) => entry.type === "expense" && entry.userId == user?.id)
+    ?.reduce((acc, entry) => acc + entry.value, 0) ?? 0;
+
   const totalBalance = totalIncome - totalExpense;
 
   useEffect(() => {
@@ -48,6 +54,8 @@ export default function Family() {
           totalBalance={totalBalance}
           totalIncome={totalIncome}
           totalExpense={totalExpense}
+          userIncome={totalUserIncome}
+          userExpense={totalUserExpense}
           user={user}
           isFamilyView
         />

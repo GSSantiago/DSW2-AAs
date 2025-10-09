@@ -1,3 +1,5 @@
+import type { Family } from "./family";
+
 export type User = {
   id: string;
   firstName: string;
@@ -7,4 +9,5 @@ export type User = {
   createdAt: string;
   updatedAt: string;
   avatar: string;
+  family?: Family
 };

@@ -1,4 +1,3 @@
-import type { Family } from "~/types/family";
 import type { User } from "~/types/user";
 
 export default function BalanceCard({
@@ -6,7 +5,6 @@ export default function BalanceCard({
   totalIncome,
   totalExpense,
   user,
-  family = null,
   isFamilyView,
   userIncome, 
   userExpense,
@@ -15,7 +13,6 @@ export default function BalanceCard({
   totalIncome: number;
   totalExpense: number;
   user: User;
-  family?: Family | null;
   isFamilyView?: boolean;
   userIncome?: number;
   userExpense?: number;
@@ -24,10 +21,10 @@ export default function BalanceCard({
     <div className="flex flex-col gap-4 bg-white p-4 rounded-lg border border-gray-200">
       <div className="flex items-center gap-3">
         {/* TODO: Get family avatar from api */}
-        {isFamilyView && user.familyAvatar && (
+        {isFamilyView && user?.family?.avatar && (
           <img
-            src={user.familyAvatar}
-            alt={user.familyName || "Família"}
+            src={user.family.avatar}
+            alt={user.family.name || "Família"}
             className="w-12 h-12 rounded-full bg-gray-200"
           />
         )}
@@ -36,7 +33,7 @@ export default function BalanceCard({
             {isFamilyView ? "Balanço da Família" : "Olá,"}
           </span>
           <span className="font-bold text-xl md:text-2xl leading-none">
-            {isFamilyView ? user.familyName : `${user.firstName}!`}
+            {isFamilyView ? user.family?.name : `${user.firstName}!`}
           </span>
         </div>
       </div>

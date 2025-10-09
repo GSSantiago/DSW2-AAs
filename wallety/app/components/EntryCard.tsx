@@ -38,7 +38,7 @@ export default function EntryCard({
         <span
           className={`${
             entry.type === "income" ? "text-green-700" : "text-red-700"
-          } text-sm md:text-base font-semibold`}
+          } text-sm md:text-base font-semibold whitespace-nowrap`}
         >
           {entry.type === "income" ? "+" : "-"}{" "}
           {entry.value.toLocaleString("pt-BR", {

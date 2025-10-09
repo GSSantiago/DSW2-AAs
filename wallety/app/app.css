@@ -15,7 +15,7 @@
 
 @layer components {
   .form-input {
-    @apply block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6;
+    @apply block w-full rounded-md bg-white px-3 py-2 transition-colors duration-100 text-gray-900 outline-1 -outline-offset-1 outline-gray-300 shadow-sm placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-primary text-sm/6 md:text-base;
   }
 
   .form-label {

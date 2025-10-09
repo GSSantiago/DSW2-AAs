@@ -13,6 +13,8 @@ export default function AppNav() {
               src={"/logo-small.png"}
               alt="Logo"
               className="size-10 object-cover"
+              width={400}
+              height={400}
             />
 
             <div className="flex items-center gap-4 h-full">

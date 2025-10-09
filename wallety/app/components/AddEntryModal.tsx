@@ -60,8 +60,8 @@ export default function AddEntryModal({ isOpen, onClose, createEntry }: AddEntry
   const categories = entryType === "expense" ? expenseCategories : incomeCategories;
 
 return (
-  <div className="fixed inset-0 backdrop-blur-lg z-40 flex justify-center items-center p-4">
-    <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-md m-4">
+  <div className="fixed inset-0 backdrop-blur-lg z-60 flex justify-center items-center p-4">
+    <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-md">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold text-gray-800">Adicionar Entrada</h2>
         <button 
@@ -80,7 +80,7 @@ return (
             setEntryType("expense");
             setFormData(prev => ({ ...prev, category: 'food' }));
           }}
-          className={`w-full p-2.5 rounded-lg font-semibold text-sm transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+          className={`w-full p-2.5 rounded-lg font-semibold text-sm transition-all duration-200 cursor-pointer focus:outline-none ${
             entryType === 'expense' 
             ? 'bg-red-500 text-white shadow-sm hover:bg-red-600 focus:ring-red-500' 
             : 'bg-gray-100 text-gray-600 hover:bg-gray-200 focus:ring-gray-300'
@@ -93,9 +93,9 @@ return (
             setEntryType("income");
             setFormData(prev => ({ ...prev, category: 'salary' }));
           }}
-          className={`w-full p-2.5 rounded-lg font-semibold text-sm transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+          className={`w-full p-2.5 rounded-lg font-semibold text-sm transition-all duration-200 cursor-pointer focus:outline-none ${
             entryType === 'income' 
-            ? 'bg-green-500 text-white shadow-sm hover:bg-green-600 focus:ring-green-500' 
+            ? 'bg-green-500 text-white shadow-sm hover:bg-green-600' 
             : 'bg-gray-100 text-gray-600 hover:bg-gray-200 focus:ring-gray-300'
           }`}
         >
@@ -113,7 +113,7 @@ return (
             value={formData.title} 
             onChange={handleInputChange} 
             required 
-            className="w-full px-3 py-2 text-gray-800 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+            className="w-full px-3 py-2 text-gray-800 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
           />
         </div>
         <div>
@@ -131,7 +131,7 @@ return (
             onChange={handleInputChange} 
             required 
             placeholder="R$ 0,00"
-            className="w-full px-3 py-2 text-gray-800 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+            className="w-full px-3 py-2 text-gray-800 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
           />
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -144,7 +144,7 @@ return (
               value={formData.date} 
               onChange={handleInputChange} 
               required 
-              className="w-full px-3 py-2 text-gray-800 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              className="w-full px-3 py-2 text-gray-800 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
             />
           </div>
           <div className="relative">
@@ -154,7 +154,7 @@ return (
               id="category" 
               value={formData.category} 
               onChange={handleInputChange} 
-              className="w-full appearance-none px-3 py-2 bg-white text-gray-800 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              className="w-full appearance-none px-3 py-2 bg-white text-gray-800 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
             >
               {Object.entries(categories).map(([key, label]) => (
                 <option key={key} value={key}>{label}</option>
@@ -173,12 +173,12 @@ return (
             value={formData.description} 
             onChange={handleInputChange} 
             rows={3} 
-            className="w-full px-3 py-2 text-gray-800 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+            className="w-full px-3 py-2 text-gray-800 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
           ></textarea>
         </div>
         <button 
           type="submit" 
-          className="w-full py-3 px-4 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 cursor-pointer transition-all"
+          className="w-full py-3 px-4 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 cursor-pointer transition-all"
         >
           Salvar Entrada
         </button>

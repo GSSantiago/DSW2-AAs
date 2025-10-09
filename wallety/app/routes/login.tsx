@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import type { Route } from "./+types/login";
 
 export function meta({}: Route.MetaArgs) {
@@ -8,24 +9,31 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Login() {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    navigate("/");
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
           <div className="mx-auto h-12 w-12 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-xl">W</span>
+            <img src="/logo-small.png" alt="logo Wallety" className="size-10 object-cover" width={400} height={400}/>
           </div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Faça login no Wallety
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
             Ou{" "}
-            <a href="#" className="font-medium text-primary hover:text-primary">
+            <a href="#" className="font-medium text-primary hover:text-primary-dark">
               crie uma nova conta
             </a>
           </p>
         </div>
-        <form className="mt-8 space-y-6">
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">

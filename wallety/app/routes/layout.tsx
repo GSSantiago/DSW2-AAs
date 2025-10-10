@@ -10,26 +10,17 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Layout() {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    // TODO: Implement logout logic
-    navigate("/login");
-  };
 
   return (
     <div className="min-h-screen bg-background relative pb-15 md:pb-0">
-      {/* Navigation */}
       <AppNav />
 
-      {/* Main Content */}
       <main className="wrapper">
         <div className="py-4 md:py-6">
           <Outlet />
         </div>
       </main>
 
-      {/* Bottom Navigation */}
       <BottomNav />
     </div>
   );

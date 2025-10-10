@@ -17,7 +17,7 @@ export default function BottomNav() {
         />
 
         <BottomNavItem
-          to="#"
+          to="/login"
           icon={user ? <img src={user.avatar} alt="Avatar" className="size-6 object-cover rounded-full" /> : null}
           label="Conta"
         />

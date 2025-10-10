@@ -18,7 +18,7 @@ export default function Layout() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 relative pb-15 md:pb-0">
+    <div className="min-h-screen bg-background relative pb-15 md:pb-0">
       {/* Navigation */}
       <AppNav />
 

@@ -11,6 +11,7 @@
   --color-secondary-light: #d19dd2;
   --color-danger: #B00020;
   --color-success: #4CAF50;
+  --color-background: #72a971;
 }
 
 @layer components {

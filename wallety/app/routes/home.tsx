@@ -87,7 +87,7 @@ export default function Home() {
 
         <div className="flex flex-col gap-4 col-span-2">
           <div className="flex items-center gap-4 justify-between">
-            <h1 className="text-xl md:text-2xl leading-none font-bold">Últimas entradas</h1>
+            <h1 className="text-xl md:text-2xl text-white text-shadow-md leading-none font-bold">Últimas entradas</h1>
             <button onClick={() => setIsOpen(true)} className="button">Adicionar entrada</button>
           </div>
 

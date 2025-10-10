@@ -26,7 +26,7 @@ export default function AppNav() {
               </NavLink>
             </div>
           </div>
-          <div className="flex items-center gap-2 h-full navbar-link">
+          <div className="flex items-center gap-4 h-full navbar-link">
             {user && (
               <img
                 src={user.avatar}
@@ -34,6 +34,7 @@ export default function AppNav() {
                 className="size-10 object-cover rounded-full"
               />
             )}
+            <a href="/login">Sair</a>
           </div>
         </div>
       </div>

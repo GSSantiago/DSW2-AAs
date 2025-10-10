@@ -62,7 +62,7 @@ export default function Family() {
       </div>
       <div className="flex flex-col gap-4 col-span-2">
         <div className="flex items-center gap-4 justify-between">
-          <h1 className="text-xl md:text-2xl font-bold">Últimas Entradas da Família</h1>
+          <h1 className="text-xl text-white md:text-2xl font-bold">Últimas Entradas da Família</h1>
         </div>
         <div className="flex flex-col gap-2">
           {familyEntries.map((entry) => (

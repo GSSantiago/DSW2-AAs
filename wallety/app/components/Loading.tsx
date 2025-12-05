@@ -5,10 +5,7 @@ export default function Loading() {
       aria-label="Carregando"
       role="status"
     >
-      <div
-        className="h-16 w-16 animate-spin rounded-full border-4 border-solid border-blue-600 border-t-transparent"
-      ></div>
+      <div className="h-16 w-16 animate-spin rounded-full border-4 border-solid border-blue-600 border-t-transparent"></div>
     </div>
   );
 }
-

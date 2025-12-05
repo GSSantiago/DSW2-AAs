@@ -25,14 +25,23 @@ export default function Login() {
       <div className="max-w-md w-full space-y-8">
         <div>
           <div className="mx-auto h-12 w-12 bg-primary rounded-lg flex items-center justify-center">
-            <img src="/logo-small.png" alt="logo Wallety" className="size-10 object-cover" width={400} height={400}/>
+            <img
+              src="/logo-small.png"
+              alt="logo Wallety"
+              className="size-10 object-cover"
+              width={400}
+              height={400}
+            />
           </div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Faça login no Wallety
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
             Ou{" "}
-            <a href="#" className="font-medium text-primary hover:text-primary-dark">
+            <a
+              href="#"
+              className="font-medium text-primary hover:text-primary-dark"
+            >
               crie uma nova conta
             </a>
           </p>
@@ -40,7 +49,10 @@ export default function Login() {
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Endereço de email
               </label>
               <input
@@ -54,7 +66,10 @@ export default function Login() {
               />
             </div>
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Senha
               </label>
               <input
@@ -77,13 +92,19 @@ export default function Login() {
                 type="checkbox"
                 className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
               />
-              <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
+              <label
+                htmlFor="remember-me"
+                className="ml-2 block text-sm text-gray-900"
+              >
                 Lembrar-me
               </label>
             </div>
 
             <div className="text-sm">
-              <a href="#" className="font-medium text-primary hover:text-primary-dark">
+              <a
+                href="#"
+                className="font-medium text-primary hover:text-primary-dark"
+              >
                 Esqueceu sua senha?
               </a>
             </div>

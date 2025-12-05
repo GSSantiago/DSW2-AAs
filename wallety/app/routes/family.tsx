@@ -19,30 +19,40 @@ export default function Family() {
 
   const [familyEntries, setFamilyEntries] = useState<FamilyEntry[]>([]);
 
-  const totalIncome = familyEntries?.filter((entry) => entry.type === "income")
-    ?.reduce((acc, entry) => acc + entry.value, 0) ?? 0;
+  const totalIncome =
+    familyEntries
+      ?.filter((entry) => entry.type === "income")
+      ?.reduce((acc, entry) => acc + entry.value, 0) ?? 0;
 
-  const totalExpense = familyEntries?.filter((entry) => entry.type === "expense")
-    ?.reduce((acc, entry) => acc + entry.value, 0) ?? 0;
+  const totalExpense =
+    familyEntries
+      ?.filter((entry) => entry.type === "expense")
+      ?.reduce((acc, entry) => acc + entry.value, 0) ?? 0;
 
-  const totalUserIncome = familyEntries?.filter((entry) => entry.type === "income" && entry.userId == user?.id)
-    ?.reduce((acc, entry) => acc + entry.value, 0) ?? 0;
+  const totalUserIncome =
+    familyEntries
+      ?.filter((entry) => entry.type === "income" && entry.userId == user?.id)
+      ?.reduce((acc, entry) => acc + entry.value, 0) ?? 0;
 
-  const totalUserExpense = familyEntries?.filter((entry) => entry.type === "expense" && entry.userId == user?.id)
-    ?.reduce((acc, entry) => acc + entry.value, 0) ?? 0;
+  const totalUserExpense =
+    familyEntries
+      ?.filter((entry) => entry.type === "expense" && entry.userId == user?.id)
+      ?.reduce((acc, entry) => acc + entry.value, 0) ?? 0;
 
   const totalBalance = totalIncome - totalExpense;
 
   useEffect(() => {
     if (!user) return;
     const fetchFamilyEntries = async () => {
-      const response = await fetch(`http://localhost:3001/family/${user.currentFamilyId}/entries`);
+      const response = await fetch(
+        `http://localhost:3001/family/${user.currentFamilyId}/entries`,
+      );
       const data = await response.json();
       setFamilyEntries(data);
     };
     fetchFamilyEntries();
   }, [user]);
-  
+
   if (!user) {
     return null;
   }
@@ -62,7 +72,9 @@ export default function Family() {
       </div>
       <div className="flex flex-col gap-4 col-span-2">
         <div className="flex items-center gap-4 justify-between">
-          <h1 className="text-xl text-white md:text-2xl font-bold">Últimas Entradas da Família</h1>
+          <h1 className="text-xl text-white md:text-2xl font-bold">
+            Últimas Entradas da Família
+          </h1>
         </div>
         <div className="flex flex-col gap-2">
           {familyEntries.map((entry) => (
@@ -73,4 +85,3 @@ export default function Family() {
     </div>
   );
 }
-

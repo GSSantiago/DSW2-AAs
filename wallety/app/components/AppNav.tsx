@@ -40,7 +40,9 @@ export default function AppNav() {
                 className="size-10 object-cover rounded-full"
               />
             )}
-            <button onClick={handleLogout} className="cursor-pointer">Sair</button>
+            <button onClick={handleLogout} className="cursor-pointer">
+              Sair
+            </button>
           </div>
         </div>
       </div>

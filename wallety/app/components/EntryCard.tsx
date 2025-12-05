@@ -30,7 +30,8 @@ export default function EntryCard({
             {entry.title}
           </span>
           <span className="text-sm text-gray-500">
-            {entry.user && `${entry.user?.firstName} ${entry.user?.lastName} -`} {categoryLabels[entry.category]}
+            {entry.user && `${entry.user?.firstName} ${entry.user?.lastName} -`}{" "}
+            {categoryLabels[entry.category]}
           </span>
         </div>
       </div>

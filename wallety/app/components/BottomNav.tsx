@@ -18,7 +18,15 @@ export default function BottomNav() {
 
         <BottomNavItem
           to="/login"
-          icon={user ? <img src={user.avatar} alt="Avatar" className="size-6 object-cover rounded-full" /> : null}
+          icon={
+            user ? (
+              <img
+                src={user.avatar}
+                alt="Avatar"
+                className="size-6 object-cover rounded-full"
+              />
+            ) : null
+          }
           label="Conta"
         />
       </div>
@@ -40,9 +48,7 @@ const BottomNavItem = ({
       to={to}
       className={({ isActive }) =>
         `flex flex-col items-center justify-center flex-1 gap-1 transition-colors border-1 border-transparent rounded-full ${
-          isActive
-            ? "text-primary [&>img]:border-primary"
-            : "text-gray-500"
+          isActive ? "text-primary [&>img]:border-primary" : "text-gray-500"
         }`
       }
     >

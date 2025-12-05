@@ -36,7 +36,7 @@ export default function Home() {
 
   const fetchEntries = async () => {
     const response = await fetch(
-      `http://localhost:3001/users/${user?.id}/entries?_sort=date&_order=desc`
+      `http://localhost:3001/users/${user?.id}/entries?_sort=date&_order=desc`,
     );
     const data = await response.json();
     setEntries(data);

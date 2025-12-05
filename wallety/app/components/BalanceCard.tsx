@@ -6,7 +6,7 @@ export default function BalanceCard({
   totalExpense,
   user,
   isFamilyView,
-  userIncome, 
+  userIncome,
   userExpense,
 }: {
   totalBalance: number;
@@ -50,57 +50,78 @@ export default function BalanceCard({
       {isFamilyView ? (
         <div className="flex flex-col gap-4 border-t border-gray-200 pt-4">
           <div>
-            <span className="text-sm font-semibold text-gray-600">Total da Família</span>
+            <span className="text-sm font-semibold text-gray-600">
+              Total da Família
+            </span>
             <div className="flex items-center gap-4 mt-1">
               <div className="flex flex-col">
                 <span className="text-xs text-gray-500">Entradas</span>
                 <span className="font-bold text-green-700 text-sm md:text-base">
-                  {totalIncome.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
+                  {totalIncome.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}
                 </span>
               </div>
               <div className="w-px h-10 bg-gray-200"></div>
               <div className="flex flex-col">
                 <span className="text-xs text-gray-500">Gastos</span>
                 <span className="font-bold text-red-700 text-sm md:text-base">
-                  {totalExpense.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
+                  {totalExpense.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}
                 </span>
               </div>
             </div>
           </div>
-          
+
           <div>
-            <span className="text-sm font-semibold text-gray-600">Sua Contribuição</span>
+            <span className="text-sm font-semibold text-gray-600">
+              Sua Contribuição
+            </span>
             <div className="flex items-center gap-4 mt-1">
               <div className="flex flex-col">
                 <span className="text-xs text-gray-500">Entradas</span>
                 <span className="font-bold text-green-700 text-sm md:text-base">
-                  {(userIncome ?? 0).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
+                  {(userIncome ?? 0).toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}
                 </span>
               </div>
               <div className="w-px h-10 bg-gray-200"></div>
               <div className="flex flex-col">
                 <span className="text-xs text-gray-500">Gastos</span>
                 <span className="font-bold text-red-700 text-sm md:text-base">
-                  {(userExpense ?? 0).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
+                  {(userExpense ?? 0).toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}
                 </span>
               </div>
             </div>
           </div>
         </div>
       ) : (
-
         <div className="flex items-center gap-4">
           <div className="flex flex-col">
             <span className="text-xs md:text-sm text-gray-500">Entradas</span>
             <span className="font-bold text-green-700 text-sm md:text-base">
-              {totalIncome.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
+              {totalIncome.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              })}
             </span>
           </div>
           <div className="w-px h-10 bg-gray-200"></div>
           <div className="flex flex-col">
             <span className="text-xs md:text-sm text-gray-500">Gastos</span>
             <span className="font-bold text-red-700 text-sm md:text-base">
-              {totalExpense.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
+              {totalExpense.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              })}
             </span>
           </div>
         </div>

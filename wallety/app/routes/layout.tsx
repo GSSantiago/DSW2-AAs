@@ -10,7 +10,6 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Layout() {
-
   return (
     <div className="min-h-screen bg-background relative pb-15 md:pb-0">
       <AppNav />

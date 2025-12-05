@@ -20,7 +20,6 @@ export default function BalanceCard({
   return (
     <div className="flex flex-col gap-4 bg-white p-4 rounded-lg border border-gray-200">
       <div className="flex items-center gap-3">
-        {/* TODO: Get family avatar from api */}
         {isFamilyView && user?.family?.avatar && (
           <img
             src={user.family.avatar}

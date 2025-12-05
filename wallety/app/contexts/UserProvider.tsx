@@ -1,5 +1,7 @@
 import { useState, useEffect, type ReactNode } from "react";
 import type { User } from "~/types/user";
+
+import { useNavigate } from "react-router";
 import { UserContext, type UserContextType } from "./UserContext";
 
 const USER_STORAGE_KEY = "wallety_user";
@@ -8,6 +10,9 @@ export function UserProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  const navigate = useNavigate();
+
 
   const saveUserToLocalStorage = (userData: User) => {
     try {
@@ -97,10 +102,11 @@ export function UserProvider({ children }: { children: ReactNode }) {
     const storedUser = getUserFromLocalStorage();
     if (storedUser) {
       setUser(storedUser);
-      setIsLoading(false);
     } else {
-      fetchUser();
+      navigate("/login");
     }
+    setIsLoading(false);
+
   }, []);
 
   const value: UserContextType = {

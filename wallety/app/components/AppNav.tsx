@@ -1,8 +1,14 @@
-import { NavLink } from "react-router";
-import { useUser } from "~/contexts/UserContext";
+import { NavLink, useNavigate } from "react-router";
+import { useUser } from "../hooks/useUser";
 
 export default function AppNav() {
-  const { user } = useUser();
+  const { user, logout } = useUser();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
 
   return (
     <nav className="w-full shadow-sm bg-white hidden md:block">
@@ -34,7 +40,7 @@ export default function AppNav() {
                 className="size-10 object-cover rounded-full"
               />
             )}
-            <a href="/login">Sair</a>
+            <button onClick={handleLogout} className="cursor-pointer">Sair</button>
           </div>
         </div>
       </div>

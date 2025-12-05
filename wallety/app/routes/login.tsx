@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router";
+import { useState } from "react";
 import type { Route } from "./+types/login";
+import { useUser } from "../hooks/useUser";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -10,9 +12,11 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Login() {
   const navigate = useNavigate();
+  const { login, isLoading, error } = useUser();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    await login();
     navigate("/");
   };
 
@@ -89,8 +93,9 @@ export default function Login() {
             <button
               type="submit"
               className="button w-full py-2"
+              disabled={isLoading}
             >
-              Entrar
+              {isLoading ? "Entrando..." : "Entrar"}
             </button>
           </div>
         </form>

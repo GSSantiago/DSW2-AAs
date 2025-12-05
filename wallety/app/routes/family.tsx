@@ -2,7 +2,7 @@ import EntryCard from "~/components/EntryCard";
 
 import BalanceCard from "~/components/BalanceCard";
 
-import { useUser } from "~/contexts/UserContext";
+import { useUser } from "~/hooks/useUser";
 import type { Route } from "./+types/family";
 import type { FamilyEntry } from "~/types/entries";
 import { useEffect, useState } from "react";

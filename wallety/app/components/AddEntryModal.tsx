@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useUser } from "~/contexts/UserContext";
+import { useUser } from "../hooks/useUser";
 import { expenseCategories, incomeCategories } from "~/constants/entries";
 import type { Entry } from "~/types/entries";
 

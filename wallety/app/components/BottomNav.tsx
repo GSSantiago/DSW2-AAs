@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import { useUser } from "~/contexts/UserContext";
+import { useUser } from "~/hooks/useUser";
 import { Home, Users, User } from "lucide-react";
 
 export default function BottomNav() {
